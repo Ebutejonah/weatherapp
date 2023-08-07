@@ -127,4 +127,4 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['weatherapp-production-d82f.up.railway.app','127.0.0.1','https://weatherapp-production-d82f.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1','https://weatherapp-production-d82f.up.railway.app']
