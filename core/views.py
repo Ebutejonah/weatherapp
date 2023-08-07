@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 def indexview(request):
-    API_KEY = open("API_KEY", "r").read()
+    API_KEY = open("API_KEY.txt", "r").read()
     current_weather_url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}"
     forecast_url = "https://api.openweathermap.org/data/2.5/onecall?lat={}&lon={}&exclude=current,minutely,hourly,alerts&appid={}"
     if request.method == "POST":
