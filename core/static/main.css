@@ -33,6 +33,9 @@ body {
   
   .comparison-container{
     padding-top:70px;
+    display: flex;
+    justify-content: center;
+    gap:80px;
   }
   .forecast-container {
     display: flex;
