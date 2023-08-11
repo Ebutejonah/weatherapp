@@ -8,27 +8,29 @@
     <link rel="stylesheet" href="{%static 'main.css'%}" type="text/css">
 </head>
 <body>
-    <form action="" method="POST">{%csrf_token%}
-        <input type="text" name="city1" placeholder="Location">
-        <input type="text" name="city2" placeholder="Location">
-        <button type="submit">Check Weather</button>
-    </form>
-    <div class="comparison-container">
-        {%for message in messages%}
-            {%if message%}
-                <p>{{message}}</p>
+    <div class="main">
+        <form action="" method="POST">{%csrf_token%}
+            <input type="text" name="city1" placeholder="Location">
+            <input type="text" name="city2" placeholder="Location">
+            <button type="submit">Check Weather</button>
+        </form>
+        <div class="comparison-container">
+            {%for message in messages%}
+                {%if message%}
+                    <p>{{message}}</p>
+                {%endif%}
+            {%endfor%}
+            {%if weather_data1%}
+                <div class="city1-container">
+                    {%include 'city_weather.html' with weather_data=weather_data1 daily_forecast=daily_forecast1%}
+                </div>
             {%endif%}
-        {%endfor%}
-        {%if weather_data1%}
-            <div class="city1-container">
-                {%include 'city_weather.html' with weather_data=weather_data1 daily_forecast=daily_forecast1%}
-            </div>
-        {%endif%}
-        {%if weather_data2%}
-            <div class="city2-container">
-                {%include 'city_weather.html' with weather_data=weather_data2 daily_forecast=daily_forecast2%}
-            </div>
-        {%endif%}
+            {%if weather_data2%}
+                <div class="city2-container">
+                    {%include 'city_weather.html' with weather_data=weather_data2 daily_forecast=daily_forecast2%}
+                </div>
+            {%endif%}
+        </div>
     </div>
     <footer>
         {%include 'footnote.html'%}

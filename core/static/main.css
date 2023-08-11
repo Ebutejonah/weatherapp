@@ -4,6 +4,11 @@ body {
     text-align: center;
     padding: 50px;
     justify-content: center;
+    flex-direction: column;
+  }
+
+  .main{
+    height:100vh;
   }
   
   form {
@@ -43,15 +48,6 @@ body {
     margin: 10px;
     width: calc(100% / 5 - 20px);
     box-sizing: border-box;
-  }
-
-  section{
-    bottom:0;
-    position:absolute;
-    justify-content: center;
-    font-style:italic;
-    text-align: center;
-    width:fit-content;
   }
   
   @media (max-width: 767px) {
